@@ -1,0 +1,34 @@
+{
+  "name": "material-joi-forms",
+  "version": "1.0.0",
+  "description": "generate angular-material forms from joi schemas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/capaj/material-joi-forms.git"
+  },
+  "keywords": [
+    "joi",
+    "forms",
+    "material",
+    "angular"
+  ],
+  "author": "capajj@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/capaj/material-joi-forms/issues"
+  },
+  "homepage": "https://github.com/capaj/material-joi-forms",
+  "jspm": {
+    "name": "material-joi-forms-e2etests",
+    "directories": {
+      "baseURL": "test/e2e"
+    },
+    "dependencies": {
+      "joi": "npm:joi@^5.1.0"
+    }
+  }
+}
