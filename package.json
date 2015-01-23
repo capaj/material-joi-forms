@@ -28,7 +28,10 @@
       "baseURL": "test/e2e"
     },
     "dependencies": {
-      "joi": "npm:joi@^5.1.0"
+      "joi": "github:hapijs/joi@^5.1.0"
     }
+  },
+  "dependencies": {
+    "express": "^4.11.1"
   }
 }
