@@ -5,7 +5,20 @@ module.exports = angular.module('materialJoiForms', []).directive('mdJoiForm', f
 			schema: '=',
 			templateUrl: '',
 			link: function($scope, el, attrs) {
-				$scope.schema
+				console.log("$scope.schema", $scope.schema);
+				debugger;
+			}
+		}
+	};
+}).directive('mdJoiInput', function() {
+	return {
+		scope: {
+			restrict: 'E',
+			model: '=',
+			templateUrl: '',
+			link: function($scope, el, attrs) {
+				console.log("$scope.model", $scope.model);
+				debugger;
 			}
 		}
 	};

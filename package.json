@@ -28,10 +28,12 @@
       "baseURL": "test/e2e"
     },
     "dependencies": {
+      "angular-material": "^0.7.0",
       "joi": "github:hapijs/joi@^5.1.0"
     }
   },
   "dependencies": {
-    "express": "^4.11.1"
+    "express": "^4.11.1",
+    "gulp": "^3.8.10"
   }
 }
