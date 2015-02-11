@@ -6,7 +6,7 @@ gulp.task('express', function() {
 	var app = express();
 	app.use(express.static(path.join(__dirname,'test/e2e/')));
 	app.use(express.static(path.join(__dirname,'/src/')));
-	app.listen(4200);
+	app.listen(8200);
 });
 
 gulp.task('default', ['express'], function() {

@@ -7,17 +7,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-controller="mainCtrl">
-	<md-joi-input model="basicTypes.string"></md-joi-input>
-	<md-joi-input model="basicTypes.array"></md-joi-input>
-	<md-joi-input model="basicTypes.boolean"></md-joi-input>
-	<md-joi-input model="basicTypes.date"></md-joi-input>
-	<md-joi-input model="basicTypes.number"></md-joi-input>
+	<md-joi-input schema="basicTypes.string"></md-joi-input>
+	<md-joi-input schema="basicTypes.array"></md-joi-input>
+	<md-joi-input schema="basicTypes.boolean"></md-joi-input>
+	<md-joi-input schema="basicTypes.date"></md-joi-input>
+	<md-joi-input schema="basicTypes.number"></md-joi-input>
+	<md-joi-input schema="basicTypes.range"></md-joi-input>
+
+	<!--<md-joi-form schema="basicTypes"></md-joi-form>-->
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 
 <script type="text/javascript">
 	System.import('showcase').then(function() {
-		angular.bootstrap(document, ['materialJoiForms']);
+		angular.bootstrap(document, ['materialJoiFormsShowcase']);
 		console.log("angular bootstrap");
 	}, function(e) {
 		setTimeout(function () {
