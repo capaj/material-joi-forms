@@ -8,7 +8,7 @@ angular.module('materialJoiFormsShowcase', [
 	'materialJoiForms', 'ngMaterial', 'ngAria', 'ngAnimate', 'ngMessages'
 ]).controller('mainCtrl', function($scope) {
 	$scope.basicTypes = {
-		string: Joi.string().example('test test'),
+		string: Joi.string().min(6).example('test test'),
 		array: Joi.array(),
 		boolean: Joi.boolean().meta({label: 'this is how you define a label'}),
 		date: Joi.date(),

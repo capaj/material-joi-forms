@@ -25,6 +25,13 @@ module.exports = angular.module('materialJoiForms', []).directive('mdJoiForm', f
 		link: function($scope, el, attrs) {
 			var schema = $scope.schema;
 			var mappedType = valTypeMap[schema._type];
+			var testsByName = {};
+			schema._tests.forEach(function (test){
+			    testsByName[test.name] = test;
+			});
+			var minTest = testsByName.min;
+			var maxTest = testsByName.max;
+			$scope.tests = testsByName;
 
 			if (mappedType) {
 				$scope.inputType = mappedType;
@@ -34,17 +41,8 @@ module.exports = angular.module('materialJoiForms', []).directive('mdJoiForm', f
 				//ranges
 				if (schema._type === 'number') {
 
-					var minTest = schema._tests.filter(function(test) {
-						return test.name === 'min';
-					})[0];
-					var maxTest = schema._tests.filter(function(test) {
-						return test.name === 'max';
-					})[0];
-
 					if (minTest && maxTest) {
 						$scope.inputType = 'slider';
-						$scope.min = minTest.arg;
-						$scope.max = maxTest.arg;
 					}
 				}
 			}

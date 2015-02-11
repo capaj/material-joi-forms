@@ -5,12 +5,13 @@
 		</md-checkbox>
 	</div>
 
-	<md-slider ng-model="ngModel" md-discrete step="{{ step }}" min="{{ min }}" max="{{ max }}" ng-switch-when="slider"
-			   aria-label="{{ label }}">
+	<md-slider ng-model="ngModel" md-discrete step="{{ step }}" min="{{ tests.min.arg  }}" max="{{ tests.max.arg  }}"
+			   ng-switch-when="slider" aria-label="{{ label }}">
 	</md-slider>
 	<md-input-container ng-switch-default>
 		<label ng-bind-html="label"></label>
-		<input ng-model="ngModel" type="{{ ::inputType }}" placeholder="{{ ::placeholder }}">
+		<input ng-model="ngModel" type="{{ ::inputType }}" placeholder="{{ ::placeholder }}"
+			   minlength="{{ tests.min.arg }}" maxlength="{{ tests.max.arg }}">
 	</md-input-container>
 </ng-switch>
 
