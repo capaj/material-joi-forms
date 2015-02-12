@@ -7,14 +7,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body ng-controller="mainCtrl">
-	<md-joi-input schema="basicTypes.string"></md-joi-input>
+	<md-joi-input ng-model="string" schema="basicTypes.string"></md-joi-input>
 	<md-joi-input schema="basicTypes.array"></md-joi-input>
-	<md-joi-input schema="basicTypes.boolean"></md-joi-input>
+	<md-joi-input ng-model="bool" schema="basicTypes.boolean"></md-joi-input>
 	<md-joi-input schema="basicTypes.date"></md-joi-input>
 	<md-joi-input schema="basicTypes.number"></md-joi-input>
-	<md-joi-input schema="basicTypes.range"></md-joi-input>
+	<md-joi-input ng-model="range" schema="basicTypes.range"></md-joi-input>
 
 	<!--<md-joi-form schema="basicTypes"></md-joi-form>-->
+	<h3>string</h3>
+	{{ string }}
+	<h3>bool</h3>
+	{{ bool }}
+	<h3>range</h3>
+	{{ range }}
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>
 

@@ -1,17 +1,17 @@
 <ng-switch on="inputType">
 	<div ng-switch-when="checkbox">
-		<md-checkbox ng-model="ngModel" aria-label="{{ label }}">
+		<md-checkbox ng-model="$parent.ngModel" aria-label="{{ label }}">
 			{{ label }}
 		</md-checkbox>
 	</div>
 
-	<md-slider ng-model="ngModel" md-discrete step="{{ step }}" min="{{ tests.min.arg  }}" max="{{ tests.max.arg  }}"
+	<md-slider ng-model="$parent.ngModel" md-discrete step="{{ step }}" min="{{ tests.min.arg  }}" max="{{ tests.max.arg  }}"
 			   ng-switch-when="slider" aria-label="{{ label }}">
 	</md-slider>
 	<md-input-container ng-switch-default>
 		<label ng-bind-html="label"></label>
-		<input ng-model="ngModel" type="{{ ::inputType }}" placeholder="{{ ::placeholder }}"
-			   minlength="{{ tests.min.arg }}" maxlength="{{ tests.max.arg }}">
+		<input ng-model="$parent.ngModel" type="{{ ::inputType }}" placeholder="{{ ::placeholder }}"
+			   ng-minlength="tests.min.arg" ng-maxlength="tests.max.arg" ng-pattern="tests.regex.arg">
 	</md-input-container>
 </ng-switch>
 

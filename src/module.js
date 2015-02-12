@@ -18,7 +18,8 @@ module.exports = angular.module('materialJoiForms', []).directive('mdJoiForm', f
 	};
 	return {
 		scope: {
-			schema: '='
+			schema: '=',
+			ngModel: '='
 		},
 		restrict: 'E',
 		templateUrl: 'input.tmpl.html',
@@ -52,7 +53,7 @@ module.exports = angular.module('materialJoiForms', []).directive('mdJoiForm', f
 			}
 
 			$scope.placeholder = schema._examples[0];
-			console.log("$scope.schema", schema);
+			//console.log("schema", schema);
 		}
 	};
 });
