@@ -16,6 +16,8 @@ angular.module('materialJoiFormsShowcase', [
 		range: Joi.number().min(0).max(100)
 	};
 
+	$scope.schema = Joi.object().keys($scope.basicTypes);
+
 	$scope.string = 'aaa';
 	$scope.bool = true;
 	$scope.range = 50;
