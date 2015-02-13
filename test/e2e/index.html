@@ -14,20 +14,23 @@
 	<!--<md-joi-input ng-model="number" schema="basicTypes.number"></md-joi-input>-->
 	<!--<md-joi-input ng-model="range" schema="basicTypes.range"></md-joi-input>-->
 
-	<h3>string</h3>
-	{{ string }}
-	<h3>bool</h3>
-	{{ bool }}
-	<h3>range</h3>
-	{{ range }}
+	<!--<h3>string</h3>-->
+	<!--{{ string }}-->
+	<!--<h3>bool</h3>-->
+	<!--{{ bool }}-->
+	<!--<h3>range</h3>-->
+	<!--{{ range }}-->
 
 	<md-divider></md-divider>
-	<form name="myForm" joi-schema="schema"></form>
+	<form name="myForm" joi-schema="schema" ng-model="myFormVals"></form>
 	<!--<form name="myForm">-->
 		<!--<input type="text" name="test1" ng-model="form.test1">-->
 		<!--<input type="text" name="test2">-->
 	<!--</form>-->
-	{{ myForm }}
+	<md-divider></md-divider>
+
+	{{ myFormVals }}
+	<md-divider></md-divider>
 
 <script src="jspm_packages/system.js"></script>
 <script src="config.js"></script>

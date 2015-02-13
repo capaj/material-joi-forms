@@ -1,3 +1,3 @@
-<md-joi-input name="{{ child.key }}" schema="child.schema" ng-model="ngModel"
+<md-joi-input name="{{ child.key }}" schema="child.schema" ng-model="$parent.ngModel[child.key]"
 			   ng-repeat="child in joiSchema._inner.children">
 </md-joi-input>
