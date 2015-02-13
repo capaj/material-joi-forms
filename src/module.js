@@ -4,7 +4,9 @@ module.exports = angular.module('materialJoiForms', []).directive('joiSchema', f
 		templateUrl: 'form.tmpl.html',
 		scope: {
 			joiSchema: '=',
-			key: '@'
+			key: '@',
+			rowCapacity: '@',		//how many inputs per row
+			rowPopulation: '@'		//you can specify how many inputs to put in each row
 		},
 		compile: function(tEl, tAttrs) {
 			return function($scope, el, attrs) {
