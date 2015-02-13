@@ -11,7 +11,8 @@
 	<md-input-container ng-switch-default>
 		<label ng-bind-html="label"></label>
 		<input name="{{ name }}" ng-model="$parent.ngModel" type="{{ ::inputType }}" placeholder="{{ ::placeholder }}"
-			   ng-minlength="tests.min.arg" ng-maxlength="tests.max.arg" ng-pattern="tests.regex.arg">
+			   ng-minlength="tests.min.arg" ng-maxlength="tests.max.arg" md-maxlength="{{ tests.max.arg }}"
+			   ng-pattern="tests.regex.arg">
 	</md-input-container>
 </ng-switch>
 
