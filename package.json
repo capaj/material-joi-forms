@@ -1,6 +1,6 @@
 {
   "name": "material-joi-forms",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "generate angular-material forms from joi schemas",
   "main": "index.js",
   "scripts": {
