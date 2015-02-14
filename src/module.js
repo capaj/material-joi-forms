@@ -9,6 +9,7 @@ module.exports = angular.module('materialJoiForms', []).directive('joiSchema', f
 			rowPopulation: '@'		//you can specify how many inputs to put in each row
 		},
 		compile: function(tEl, tAttrs) {
+
 			return function($scope, el, attrs) {
 				//console.log("$scope.schema", $scope.joiSchema);
 			}
@@ -42,7 +43,7 @@ module.exports = angular.module('materialJoiForms', []).directive('joiSchema', f
 			scope.$error = ngModel.$error;
 		}
 	}
-}).directive('mdJoiInput', function($sce) {
+}).directive('mdJoiInput', function($sce, $compile) {
 	var valTypeMap = {
 		string: 'text',
 		boolean: 'checkbox'
@@ -62,7 +63,6 @@ module.exports = angular.module('materialJoiForms', []).directive('joiSchema', f
 			}
 			return function(scope, el, attrs) {
 				var schema = scope.schema;
-
 				var mappedType = valTypeMap[schema._type];
 				var testsByName = {};
 				schema._tests.forEach(function (test){
@@ -92,6 +92,17 @@ module.exports = angular.module('materialJoiForms', []).directive('joiSchema', f
 
 				scope.placeholder = schema._examples[0];
 				console.log("schema", schema);
+
+				if (scope.inputType === 'object') {
+					setTimeout(function(){	// content is appended after first level has rendered
+						var div;
+						var $div = angular.element('<div></div>');
+						$div.attr('joi-schema', 'schema');
+						$div.attr('ng-model', '$parent.ngModel.' + scope.name);
+						div = $compile($div)(scope);
+						el[0].firstChild.firstElementChild.appendChild(div[0]);
+					});
+				}
 
 			}
 		}

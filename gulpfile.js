@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var browserSync = require('browser-sync');
 
 gulp.task('express', function() {
 	var express = require('express');
@@ -10,5 +11,9 @@ gulp.task('express', function() {
 });
 
 gulp.task('default', ['express'], function() {
+	browserSync({
+		proxy: "http://localhost:8200"
+	});
 
+	gulp.watch(["src/**/*.js", "test/e2e/**/*.js", "**/*.html"], browserSync.reload);
 });

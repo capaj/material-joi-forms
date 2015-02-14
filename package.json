@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "express": "^4.11.1",
-    "gulp": "^3.8.10"
+    "gulp": "^3.8.10",
+    "browser-sync": "^2.0.1"
   }
 }
